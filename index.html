@@ -1,0 +1,981 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CLEAN MARKUP = GOOD KARMA.
+      Hi source code lover,
+
+      you're a curious person and a fast learner ;)
+      Let's make something beautiful together. Contribute on Github:
+      https://github.com/webslides/webslides
+
+      Thanks,
+      @jlantunez.
+    -->
+
+    <!-- SEO -->
+    <title>URBANIA - Urban Indoor Agriculture</title>
+    <meta name="description" content="WebSlides is the easiest way to make HTML presentations, portfolios, and landings. Just essential features.">
+
+    <!-- URL CANONICAL -->
+    <!-- <link rel="canonical" href="http://your-url.com/"> -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS WebSlides -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/svg-icons.css">
+
+    <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+
+    <!-- FACEBOOK -->
+    <meta property="og:url" content="http://your-url.com/"> <!-- YOUR URL -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="WebSlides — Making HTML Presentations Easy"> <!-- EDIT -->
+    <meta property="og:description" content="WebSlides is about telling stories beautifully. Just the essential features. Good karma."> <!-- EDIT -->
+    <meta property="og:updated_time" content="2017-01-04T17:20:50"> <!-- EDIT -->
+    <meta property="og:image" content="static/images/share-webslides.jpg"> <!-- EDIT -->
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webslides"> <!-- EDIT -->
+    <meta name="twitter:creator" content="@jlantunez"> <!-- EDIT -->
+    <meta name="twitter:title" content="WebSlides — Making HTML Presentations Easy"> <!-- EDIT -->
+    <meta name="twitter:description" content="WebSlides is about good karma. Just essential features. 120+ free slides ready to use."> <!-- EDIT -->
+    <meta name="twitter:image" content="static/images/share-webslides.jpg"> <!-- EDIT -->
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="static/images/favicons/favicon-192.png">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+
+                      <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="static/Untitled9 - Jupyter Notebook_files/leaflet.js.download"></script>
+    <script src="static/Untitled9 - Jupyter Notebook_files/jquery-1.12.4.min.js.download"></script>
+    <script src="static/Untitled9 - Jupyter Notebook_files/bootstrap.min.js.download"></script>
+    <script src="static/Untitled9 - Jupyter Notebook_files/leaflet.awesome-markers.js.download"></script>
+    <link rel="stylesheet" href="static/Untitled9 - Jupyter Notebook_files/leaflet.css">
+    <link rel="stylesheet" href="static/Untitled9 - Jupyter Notebook_files/bootstrap.min.css">
+    <link rel="stylesheet" href="static/Untitled9 - Jupyter Notebook_files/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="static/Untitled9 - Jupyter Notebook_files/font-awesome.min.css">
+    <link rel="stylesheet" href="static/Untitled9 - Jupyter Notebook_files/leaflet.awesome-markers.css">
+    <link rel="stylesheet" href="static/Untitled9 - Jupyter Notebook_files/leaflet.awesome.rotate.min.css">
+
+    <style>
+      #map_db1857f2223e4257a29d1ffa112e9b64 {
+          position: relative;
+          width: 100.0%;
+          height: 100.0%;
+          left: 0.0%;
+          top: 0.0%;
+      }
+      .image-popup {
+        cursor: pointer;
+      }
+    </style>
+
+  </head>
+  <body>
+    <!-- <header role="banner">
+      <nav role="navigation">
+        <p class="logo"><a href="index.html" title="WebSlides">WebSlides</a></p>
+        <ul>
+          <li class="github">
+            <a rel="external" href="https://github.com/webslides/webslides" title="Github">
+              <svg class="fa-github">
+                <use xlink:href="#fa-github"></use>
+              </svg>
+              <em>WebSlides</em>
+            </a>
+          </li>
+          <li class="twitter">
+            <a rel="external" href="https://twitter.com/webslides" title="Twitter">
+              <svg class="fa-twitter">
+                <use xlink:href="#fa-twitter"></use>
+              </svg>
+              <em>@WebSlides</em>
+            </a>
+          </li>
+          <!-/-  <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li> -/->
+        </ul>
+      </nav>
+    </header> -->
+
+    <main role="main">
+      <article id="webslides" class="horizontal">
+        <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+        <section class="bg-primary">
+          <span class="background-bottom dark" style="background-image:url('static/images/vertical_hydroponics.jpg')"></span>
+          <div class="wrap aligncenter">
+            <h3 style="font-size: 5em">
+              <svg class="fa-leaf">
+                <use xlink:href="#fa-leaf"></use>
+              </svg>
+              URBANIA
+            </h3>
+            <h4>URBAN Indoor Agriculture</h4>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+         <span class="background"></span>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap aligncenter">
+            <div class="bg-white shadow" style="width: 47em; padding: 0">
+              <ul class="flexblock">
+                <li>
+                  <h1><strong>Hypothesis</strong></h1>
+                  <h3><strong>URBANIA - Urban Indoor Agriculture</strong></h1>
+                </li>
+              </ul>
+            </div>
+            <p style="text-align: left; margin-top: 5em; width: 84em; padding-left: 1em; font-size: 16px">URBANIA aims to identify existing "food deserts" and propose a solution to help hydrate them via urban and indoor agriculture. This proposition is supported by identifying vacant commercial real estate near areas with limited access to nutritious food and generating figures to justify converting these properties into food production sites. Ideally the food production sites would fall within close proximity to public transportation stops, allowing for further accessibility to affordable, fresh produce.
+            </p>
+            <p style="text-align: left; margin-top: 5em; width: 84em; padding-left: 1em; font-size: 16px">4 square feet of area can produce a conservative average of 25 lbs of salable produce annually. With 60% of floor space devoted to production, a 4,000 square foot commercial property could potentially yield 15,000 - 18,000 lbs of produce each year. Assuming a generous 100 lbs per person, per year, one 4,000 sq ft space could provide fresh, affordable and accessible produce to over 150 people.</p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section id="definitions">
+          <style scoped>
+            .content-heading {
+              cursor:  pointer;
+            }
+          </style>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <div class="bg-white shadow" style="width: 47em; padding: 0">
+                  <ul class="flexblock">
+                    <li>
+                      <h1><strong>Definitions</strong></h1>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <ul style="padding: 3em 2em">
+                    <li>
+                      <h3 class="content-heading" style="text-decoration: underline" data-content="food-desert">Food Desert</h3>
+                      <p>Not the place to go for a "sand"-wich</p>
+                    </li>
+                    <li>
+                      <h3 class="content-heading" style="text-decoration: underline" data-content="food-swamp">Food Swamp</h3>
+                      <p>Saturated, soggy, vapid food options - sans alligator (typically)</p>
+                    </li>
+                    <li>
+                      <h3 class="content-heading" style="text-decoration: underline" data-content="connectTransit">Vacant Commercial Properties</h3>
+                      <p>No vacation here</p>
+                    </li>
+                    <li>
+                      <h3 class="content-heading" style="text-decoration: underline" data-content="googleEarth">Transportation Gates / Bus Stops</h3>
+                      <p>To-And-Fro</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <div class="support-cont-desc hide" data-content="food-desert">
+                  <h3>Food Desert</h3>
+                  <h6>https://www.medicalnewstoday.com/articles/what-are-food-deserts</h6><br>
+                    <p>Food deserts are regions where people have limited access to healthful and affordable food. This may be due to having a low income or having to travel farther to find healthful food options.</p>
+                    <p>Without access to healthful foods, people living in food deserts may be at higher risk of diet-related conditions, such as obesity, diabetes, and cardiovascular disease.</p>
+                  </p>
+                </div>
+                <div class="support-cont-desc hide" data-content="food-swamp">
+                  <h3>Food Swamp</h3>
+                  <h6>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5708005/</h6><br>
+                    <p>Food swamps have been described as areas with a high-density of establishments selling high-calorie fast food and junk food, relative to healthier food options.</p>
+                  </p>
+                </div>
+                <div class="support-cont-desc hide" data-content="connectTransit">
+                  <h3>Vacant Commercial Properties</h3>
+                  <h6>https://www.loopnet.com</h6><br>
+                  <p>
+                    Commercial properties listed on loopnet.com with purchase or leasing options as of March 2022. The properties shown were not selectively chosen.
+                  </p>
+                </div>
+                <div class="support-cont-desc hide" data-content="googleEarth">
+                  <h3>Transportation Gates / Bus Stops</h3>
+                  <h6>https://www.connect-transit.com/</h6><br>
+                  <p>Designated locations for accessing public transportation.
+                  </p>
+                  <p>For the purposes of this demonstration, public transportation gates depicted are exclusive to defined food desert areas (not an inclusive representation of Bloomington/Normal's overall public transportation options)
+                  </p>
+                </div>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+          <script>
+            const init = function() {
+              const contentHeaders = document.querySelectorAll('.content-heading');
+              const contentDescs = document.querySelectorAll('.support-cont-desc');
+              const findContent = (clickedHeading) => {
+                for (let i = 0; i < contentDescs.length; i++) {
+                  let contentDesc = contentDescs[i].dataset.content;
+
+                  contentDescs[i].classList.add('hide');
+                  contentDescs[i].classList.remove('animate__fadeInRight', 'show');
+                  
+                  if (contentDesc == clickedHeading) {
+                    contentDescs[i].classList.add('animate__fadeInRight', 'show');
+                  }
+                }
+              }
+
+              for (let c = 0; c < contentHeaders.length; c++) {
+                contentHeaders[c].addEventListener('click', function(e) {
+                    let heading = e.target.dataset.content;
+
+                    findContent(heading);
+                })
+              }
+            }
+
+            init();
+          </script>
+        </section>
+        <section class="bg-primary">
+          <span class="background-bottom dark" style="background-image:url('static/images/vertical-farming.jpg')"></span>
+          <div class="wrap aligncenter">
+            <h3 style="font-size: 5em">
+              <svg class="fa-inbox">
+                <use xlink:href="#fa-inbox"></use>
+              </svg>
+              Procedure
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section style="padding-top: 0">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap aligncenter">
+            <div>
+              <ul class="flexblock">
+                <li>
+                  <a href="#slide=6"><h3><strong>Identify Relevant Datasets</strong></h3></a>
+                  <a href="#slide=7"><h3><strong>Collect Relevant Data</strong></h3></a>
+                  <a href="#slide=8"><h3><strong>Structure Geo Data</strong></h3></a>
+                  <a href="#slide=9"><h3><strong>Calculate Necessary Vacant Property Data</strong></h3></a>
+                  <a href="#slide=10"><h3><strong>Process and Visualize Data with Jupyter Notebooks</strong></h3></a>
+                  <ul style="margin-left: 2em">
+                    <li><a href="#slide=11"><h3>Grocery Store Locations</h3></a></li>
+                    <li><a href="#slide=12"><h3>Grocery Store Concentration - Heatmap</h3></a></li>
+                    <li><a href="#slide=13"><h3>Grocery Store - 1 Mile Radius</h3></a></li>
+                    <li><a href="#slide=14"><h3>Vacant Commercial Properties Concentration - Heatmap</h3></a></li>
+                    <li><a href="#slide=15"><h3>Vacant Commercial Properties - 1 Mile Radius</h3></a></li>
+                    <li><a href="#slide=16"><h3>Vacant Commercial Properties - Impact Rating & Dot Plot</h3></a></li>
+                    <li><a href="#slide=17"><h3>Local Bus Stops Within Food Desert</h3></a></li>
+                    <li><a href="#slide=18"><h3>Complete Map with Transportation, Vacant Properties, and Grocery Stores</h3></a></li>
+                    <li><a href="#slide=19"><h3>Insightful Discovery</h3></a></li>
+                  </ul>
+                  <a href="#slide=20"><h3><strong>Conclusion</strong></h3></a>
+                  <a href="#slide=21"><h3><strong>Future Developments</strong></h3></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section id="identify">
+          <style scoped>
+            .content-heading {
+              cursor:  pointer;
+            }
+          </style>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <div class="bg-white shadow" style="width: 47em; padding: 0">
+                  <ul class="flexblock">
+                    <li>
+                      <h1><strong>Identify Relevant Datasets</strong></h1>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <ul style="padding: 3em 2em">
+                    <li>
+                      <h3 class="content-heading" style="text-decoration: underline" data-content="fara">Food Access Research Atlas</h3>
+                      <p>U.S. Department of Agriculture provided overview of low-income and low-access measures based on 2019 census-tract-level data with the previous 2015 data measures</p>
+                    </li>
+                    <li>
+                      <h3 class="content-heading" style="text-decoration: underline" data-content="loopnet">Loopnet.com</h3>
+                      <p>Online marketplace for commercial property, primarily providing commercial property listings for sale and for lease in the United States and is currently owned by commercial property data company CoStar Group</p>
+                    </li>
+                    <li>
+                      <h3 class="content-heading" style="text-decoration: underline" data-content="connectTransit">Connect Transit</h3>
+                      <p>Public transportation routes for Bloomington/Normal</p>
+                    </li>
+                    <li>
+                      <h3 class="content-heading" style="text-decoration: underline" data-content="googleEarth">Google Earth</h3>
+                      <p>3D representation of Earth based primarily on satellite imagery</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <div class="support-cont-desc hide" data-content="fara">
+                  <h3>Food Access Research Atlas</h3>
+                  <h6>https://www.ers.usda.gov/data-products/food-access-research-atlas/go-to-the-atlas/</h6>
+                  <figure><img class="aligncenter image-popup" src="static/images/atlas_map.png" alt="Food Access Research Atlas"></figure>
+                  <p>
+                    &bull; <span style="color: green">Data visualisations</span><br>
+                    &bull; <span style="color: green">Pertinent data </span><br>
+                    &bull; <span style="color: red">Out-of-date data</span><br>
+                    &bull; <span style="color: red">Limited dataset</span>
+                  </p>
+                </div>
+                <div class="support-cont-desc hide" data-content="loopnet">
+                  <h3>Loopnet.com</h3>
+                  <h6>https://www.loopnet.com/</h6>
+                  <figure><img class="aligncenter image-popup" src="static/images/loopnet.png" alt="Loopnet"></figure>
+                  <p>
+                    &bull; <span style="color: green">Mapped commercial listings</span><br>
+                    &bull; <span style="color: green">Relevant data</span><br>
+                    &bull; <span style="color: red">Vague property descriptions</span><br>
+                    &bull; <span style="color: red">No data file output</span>
+                  </p>
+                </div>
+                <div class="support-cont-desc hide" data-content="connectTransit">
+                  <h3>Connect Transit</h3>
+                  <h6>https://rideconnecttransit.com/map</h6>
+                  <figure><img class="aligncenter image-popup" src="static/images/connect_transit.png" alt="Connect Transit"></figure>
+                  <p>
+                    &bull; <span style="color: green">Mapped transportation routes</span><br>
+                    &bull; <span style="color: red">No data file output</span>
+                  </p>
+                </div>
+                <div class="support-cont-desc hide" data-content="googleEarth">
+                  <h3>Google Earth</h3>
+                  <h6>https://earth.google.com/</h6>
+                  <figure><img class="aligncenter image-popup" src="static/images/google_earth.png" alt="Google Earth"></figure>
+                  <p>
+                    &bull; <span style="color: green">Mapped data</span><br>
+                    &bull; <span style="color: green">Geospatial coordinates</span><br>
+                    &bull; <span style="color: red">KML file output</span>
+                  </p>
+                </div>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+          <script>
+            const initIdentify = function() {
+              const contentHeaders = document.querySelectorAll('#identify .content-heading');
+              const contentDescs = document.querySelectorAll('#identify .support-cont-desc');
+              const findContent = (clickedHeading) => {
+                for (let i = 0; i < contentDescs.length; i++) {
+                  let contentDesc = contentDescs[i].dataset.content;
+
+                  contentDescs[i].classList.add('hide');
+                  contentDescs[i].classList.remove('animate__fadeInRight', 'show');
+                  
+                  if (contentDesc == clickedHeading) {
+                    contentDescs[i].classList.add('animate__fadeInRight', 'show');
+                  }
+                }
+              }
+
+              for (let c = 0; c < contentHeaders.length; c++) {
+                contentHeaders[c].addEventListener('click', function(e) {
+                    let heading = e.target.dataset.content;
+
+                    findContent(heading);
+                })
+              }
+            }
+
+            initIdentify();
+          </script>
+        </section>
+        <section id="collect">
+          <style scoped>
+            .content-heading {
+              cursor:  pointer;
+            }
+          </style>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <div class="bg-white shadow" style="width: 47em; padding: 0">
+                  <ul class="flexblock">
+                    <li>
+                      <h1><strong>Collect Relevant Data</strong></h1>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <ul style="padding: 3em 2em">
+                    <li>
+                      <h3 class="content-heading" style="text-decoration: underline" data-content="loopnet">Loopnet.com</h3>
+                      <span>Property Listings</span>
+                      <ul style="margin-left: 2em">
+                        <li>Property Address</li>
+                        <li>Property Geographical Coordinates</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h3>Google Earth</h3>
+                      <span class="content-heading" style="text-decoration: underline" data-content="googleEarthGrocery">Grocery Stores</span>
+                      <ul style="margin-left: 2em">
+                        <li>Grocer Address</li>
+                        <li>Grocer Geographical Coordinates</li>
+                      </ul>
+                      <span class="content-heading" style="text-decoration: underline" data-content="googleEarthTransportation">Bus Stops</span>
+                      <ul style="margin-left: 2em">
+                        <li>Transportation Gate Location</li>
+                        <li>Transportation Gate Geographical Coordinates</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <div class="support-cont-desc hide" data-content="loopnet">
+                  <h3>Loopnet.com</h3>
+                  <h6>Python web scraper</h6>
+                  <h6>Generate JSON files</h6>
+                  <h6>Structure and upload data to database</h6>
+                  <figure><img style="margin-left:0" class="aligncenter" src="static/images/loopnet_properties_db.png" alt="Loopnet"></figure>
+                </div>
+                <div class="support-cont-desc hide" data-content="googleEarthGrocery">
+                  <h3>Google Earth</h3>
+                  <h6>Map Local Grocery Stores</h6>
+                  <h6>Export KML file</h6>
+                  <figure><img class="aligncenter image-popup" src="static/images/google_earth_grocery_stores.png" alt="Grocery Stores Google Maps"></figure>
+                </div>
+                <div class="support-cont-desc hide" data-content="googleEarthTransportation">
+                  <h3>Google Earth</h3>
+                  <h6>Map Local Bus Stops</h6>
+                  <h6>Export KML file</h6>
+                  <figure><img class="aligncenter image-popup" src="static/images/google_earth_transportation_stops.png" alt="Bus Stops Google Maps"></figure>
+                </div>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+          <script>
+            const initCollect = function() {
+              const contentHeaders = document.querySelectorAll('#collect .content-heading');
+              const contentDescs = document.querySelectorAll('#collect .support-cont-desc');
+              const findContent = (clickedHeading) => {
+                for (let i = 0; i < contentDescs.length; i++) {
+                  let contentDesc = contentDescs[i].dataset.content;
+
+                  contentDescs[i].classList.add('hide');
+                  contentDescs[i].classList.remove('animate__fadeInRight', 'show');
+                  
+                  if (contentDesc == clickedHeading) {
+                    contentDescs[i].classList.add('animate__fadeInRight', 'show');
+                  }
+                }
+              }
+
+              for (let c = 0; c < contentHeaders.length; c++) {
+                contentHeaders[c].addEventListener('click', function(e) {
+                    let heading = e.target.dataset.content;
+
+                    findContent(heading);
+                })
+              }
+            }
+
+            initCollect();
+          </script>
+        </section>
+        <section id="structure">
+          <style scoped>
+            .content-heading {
+              cursor:  pointer;
+            }
+          </style>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <div class="bg-white shadow" style="width: 47em; padding: 0">
+                  <ul class="flexblock">
+                    <li>
+                      <h1><strong>Structure Geo Data</strong></h1>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <ul style="padding: 3em 2em">
+                    <li>
+                      <h3 class="content-heading" style="text-decoration: underline" data-content="groceryStoresDB">Local Grocery Stores</h3>
+                      <ul style="margin-left: 2em">
+                        <li>Convert KML to geoJSON</li>
+                        <li>Upload JSON to database</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h3 class="content-heading" style="text-decoration: underline" data-content="transportationStopsDB">Bus Stops</h3>
+                      <ul style="margin-left: 2em">
+                        <li>Convert KML to geoJSON</li>
+                        <li>Upload JSON to database</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <div class="support-cont-desc hide" data-content="groceryStoresDB">
+                  <h3>Local Grocery Stores Database</h3>
+                  <h6>Convert KML to geoJSON</h6>
+                  <h6>Python script to structure dataset</h6>
+                  <h6>Upload to database</h6>
+                  <figure><img style="margin-left:0" class="aligncenter" src="static/images/grocers_db.png" alt="Grocery Stores"></figure>
+                </div>
+                <div class="support-cont-desc hide" data-content="transportationStopsDB">
+                  <h3>Bus Stops</h3>
+                  <h6>Convert KML to geoJSON</h6>
+                  <h6>Python script to structure dataset</h6>
+                  <h6>Upload to database</h6>
+                  <figure><img style="margin-left:0" class="aligncenter" src="static/images/transportation_stops.png" alt="Bus Stops Google Maps"></figure>
+                </div>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+          <script>
+            const initStructure = function() {
+              const contentHeaders = document.querySelectorAll('#structure .content-heading');
+              const contentDescs = document.querySelectorAll('#structure .support-cont-desc');
+              const findContent = (clickedHeading) => {
+                for (let i = 0; i < contentDescs.length; i++) {
+                  let contentDesc = contentDescs[i].dataset.content;
+
+                  contentDescs[i].classList.add('hide');
+                  contentDescs[i].classList.remove('animate__fadeInRight', 'show');
+                  
+                  if (contentDesc == clickedHeading) {
+                    contentDescs[i].classList.add('animate__fadeInRight', 'show');
+                  }
+                }
+              }
+
+              for (let c = 0; c < contentHeaders.length; c++) {
+                contentHeaders[c].addEventListener('click', function(e) {
+                    let heading = e.target.dataset.content;
+
+                    findContent(heading);
+                })
+              }
+            }
+
+            initStructure();
+          </script>
+        </section>
+        <section id="calculate">
+          <style scoped>
+            .content-heading {
+              cursor:  pointer;
+            }
+          </style>
+
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <div class="bg-white shadow" style="width: 47em; padding: 0">
+                  <ul class="flexblock">
+                    <li>
+                      <h1><strong>Calculate Vacant Commercial Property Data</strong></h1>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <ul style="padding: 3em 2em">
+                    <li>
+                      <h3 class="content-heading" style="text-decoration: underline" data-content="calculateNearbyGroceryStores">Calculate Nearby Grocery Stores</h3>
+                      <ul style="margin-left: 2em">
+                        <li>Haversine Formula</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h3 class="content-heading" style="text-decoration: underline" data-content="transportationStopsDB">Impact Rating</h3>
+                      <ul style="margin-left: 2em">
+                        <li>Suggests property potential for mitigating surrounding food desert areas</li>
+                        <li>Accounts for proximity and frequency of produce distributors within 1 mile</li>
+                        <li>Low Impact Rating could suggest distribution relief for nearby grocers</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <div class="support-cont-desc hide" data-content="calculateNearbyGroceryStores">
+                  <h3>Haversine Formula</h3>
+                  <h6>https://en.wikipedia.org/wiki/Haversine_formula</h6><br>
+                  <h6>The haversine formula determines the great-circle distance between two points on a sphere given their longitudes and latitudes</h6><br>
+                  <h6>Convert meters to miles</h6>
+                  <h6>Python script to automate calculations</h6>
+                  <h6>Update vacant commercial property database</h6>
+                  <figure><img style="margin-left:0" class="aligncenter image-popup" src="static/images/sublime_haversine.png" alt="Haversine Script"></figure>
+                </div>
+                <div class="support-cont-desc hide" data-content="transportationStopsDB">
+                  <h3>Impact Rating</h3>
+                  <h6>Scale of 1 - 5...(5 most impactful)</h6>
+                  <figure><img style="margin-left:0" class="aligncenter" src="static/images/loopnet_properties_db.png" alt="Loopnet"></figure>
+                </div>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+          <script>
+            const initCalculate = function() {
+              const contentHeaders = document.querySelectorAll('#calculate .content-heading');
+              const contentDescs = document.querySelectorAll('#calculate .support-cont-desc');
+              const findContent = (clickedHeading) => {
+                for (let i = 0; i < contentDescs.length; i++) {
+                  let contentDesc = contentDescs[i].dataset.content;
+
+                  contentDescs[i].classList.add('hide');
+                  contentDescs[i].classList.remove('animate__fadeInRight', 'show');
+                  
+                  if (contentDesc == clickedHeading) {
+                    contentDescs[i].classList.add('animate__fadeInRight', 'show');
+                  }
+                }
+              }
+
+              for (let c = 0; c < contentHeaders.length; c++) {
+                contentHeaders[c].addEventListener('click', function(e) {
+                    let heading = e.target.dataset.content;
+
+                    findContent(heading);
+                })
+              }
+            }
+
+            initCalculate();
+          </script>
+        </section>
+        <section class="bg-primary">
+          <span class="background-bottom dark" style="background-image:url('https://source.unsplash.com/RkBTPqPEGDo/1600x800)"></span>
+          <div class="wrap aligncenter">
+            <h3 style="font-size: 5em">
+              <svg class="fa-map">
+                <use xlink:href="#fa-map"></use>
+              </svg>
+              Process and Visualize Data<br> with Jupyter Notebooks
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section style="padding-top: 0">
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <iframe id="jupyter_groceryStores"
+                  title="Inline Frame Example"
+                  width="3000"
+                  height="2000"
+                  src="./jupyter/URBANIA_groceryStores.html">
+                </iframe>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section style="padding-top: 0">
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <iframe id="jupyter_groceryStores_heatmap"
+                  title="Inline Frame Example"
+                  width="3000"
+                  height="2000"
+                  src="./jupyter/URBANIA_groceryStores_heatmap.html">
+                </iframe>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section style="padding-top: 0">
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <iframe id="jupyter_groceryStores_mileRadius"
+                  title="Inline Frame Example"
+                  width="3000"
+                  height="2000"
+                  src="./jupyter/URBANIA_groceryStores_mileRadius.html">
+                </iframe>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section style="padding-top: 0">
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <iframe id="jupyter_vacantProperties_heatmap"
+                  title="Inline Frame Example"
+                  width="3000"
+                  height="2000"
+                  src="./jupyter/URBANIA_vacantProperties_heatmap.html">
+                </iframe>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section style="padding-top: 0">
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <iframe id="jupyter_vacantProperties_mileRadius"
+                  title="Inline Frame Example"
+                  width="3000"
+                  height="2000"
+                  src="./jupyter/URBANIA_vacantProperties_mileRadius.html">
+                </iframe>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section style="padding-top: 0">
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <iframe id="jupyter_vacantProperties_mileRadius_colorCoded"
+                  title="Inline Frame Example"
+                  width="3000"
+                  height="3500"
+                  src="./jupyter/URBANIA_vacantProperties_mileRadius_colorCoded_dotPlot.html">
+                </iframe>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section style="padding-top: 0">
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <iframe id="jupyter_transportation"
+                  title="Inline Frame Example"
+                  width="3000"
+                  height="2000"
+                  src="./jupyter/URBANIA_transportation.html">
+                </iframe>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section style="padding-top: 0">
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <iframe id="jupyter_completeMap"
+                  title="Inline Frame Example"
+                  width="3000"
+                  height="2000"
+                  src="./jupyter/URBANIA_completeMap.html">
+                </iframe>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section style="padding-top: 0">
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <iframe id="jupyter_completeMap"
+                  title="Inline Frame Example"
+                  width="3000"
+                  height="2000"
+                  src="./jupyter/URBANIA_heatmap_grocers_vacants.html">
+                </iframe>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <!-- .end .grid -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section id="conclusion">
+          <style scoped>
+            #conclusion p:first-of-type {
+              margin-top: 5em;
+            }
+            #conclusion p {
+              font-size: 16px;
+              text-align: left;
+              width: 98em;
+              padding-left: 1em;
+            }
+          </style>
+         <span class="background"></span>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap aligncenter">
+            <div class="bg-white shadow" style="width: 47em; padding: 0">
+              <ul class="flexblock">
+                <li>
+                  <h1><strong>Conclusion</strong></h1>
+                </li>
+              </ul>
+            </div>
+            <p style="text-align: left; font-size: 18px; padding-left: 1.5em; width: 84em">Urban Indoor Agriculture is a practical solution to providing immediate, affordable relief to areas otherwise considered to be "food deserts".<br>Production of produce is much faster compared to traditional outdoor methods and the area required to create quantifiable amounts of food is much smaller. </p>
+            <p style="text-align: left; font-size: 18px; padding-left: 1.5em; width: 84em">Typical vacant commercial properties are far larger than 4,000 square feet and are otherwise sitting unused. Indoor agriculture production sites could be set-up in one week and relocated just as quickly, allowing for other prospective tenants to occupy the space whenever necessary. Housing produce production efforts would allow utility services to remain in operation and not fall dormant. Security in the area would be increased by not having clusters of vacated properties, nevermind the obvious benefit of providing food to the neighboring community. The prospect of converting unused commercial spaces into agriculture production sites could also provide local employment opportunities.</p><br>
+            <p style="text-align: left; font-size: 24px; padding-left: 1em; width: 84em"><strong>TLDR; Win/Win!</strong></p>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section id="future">
+          <style scoped>
+            #future p:first-of-type {
+              margin-top: 5em;
+            }
+            #future p {
+              font-size: 16px;
+              text-align: left;
+              width: 98em;
+              padding-left: 1em;
+            }
+          </style>
+         <span class="background"></span>
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap aligncenter">
+            <div class="bg-white shadow" style="width: 47em; padding: 0">
+              <ul class="flexblock">
+                <li>
+                  <h1><strong>Future Developments</strong></h1>
+                </li>
+              </ul>
+            </div>
+            <ul style="padding: 3em 2em; text-align: left; font-size: 1.2em">
+              <li>Explore the prospect of vending machines located at bus stops to aid accessibility</li>
+              <li>Gather granular data points on vacant properties (ie. length of vacancy, area size, neighborhood demographics)</li>
+              <li>Explore possibility of repurposing construction dumpsters or shipping containers for on-site production at vacant properties</li>
+            </ul>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section class="bg-primary">
+          <span class="background-bottom dark" style="background-image:url('static/images/fin.jpg')"></span>
+          <div class="wrap aligncenter">
+            <h3 style="font-size: 5em">
+              Fin
+            </h3>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+      </article>
+      <!-- end article -->
+      <div id="popup-background" class="popup-background" style="display: none; z-index: 1000; position: absolute; top: 0px; background-color: rgba(0,0,0,0.9); height: 100%">
+        <div class="popup-content">
+            <div id="popup-title" style="color: rgba(255,255,255,1)"></div>
+            <img id="popup-image" class="popup-image" style="width: 90%; margin: 2% 5%; opacity: 1">
+        </div>
+      </div>
+
+    </main>
+    <!-- end main -->
+
+   <!-- A global footer
+
+     <footer role="contentinfo">
+      <div class="wrap">
+        <p>An <a href="https://github.com/webslides/webslides">open source solution</a>, by <a href="https://twitter.com/webslides">@webslides</a>.</p>
+      </div>
+    </footer>  -->
+
+    <!-- Required -->
+
+    <script>
+      const imgPopups = function() {
+        let thumbnails = document.querySelectorAll(".image-popup");
+
+        let popupBackground = document.querySelector("#popup-background");
+        let popupTitle = document.querySelector("#popup-title");
+        let popupImage = document.querySelector("#popup-image");
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener("click", function() {
+                popupBackground.style.display = "block";
+                popupTitle.innerHTML = this.alt;
+                popupImage.src = this.src;
+            })
+        });
+
+        popupBackground.addEventListener("click", function() {
+            popupBackground.style.display = "none";
+        })
+      }
+
+      imgPopups();
+    </script>
+    <script src="static/js/webslides.js"></script>
+    <script>
+      window.ws = new WebSlides();
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="static/js/svg-icons.js"></script>
+
+  </body>
+</html>
